@@ -1,0 +1,8 @@
+{
+  "ImageId": "ami-b2499dc8",
+  "KeyName": "us-east",
+  "SecurityGroupIds": [ "sg-1ef09f60" ],
+"InstanceType": "r3.large",
+  "Placement": {
+  }
+}
