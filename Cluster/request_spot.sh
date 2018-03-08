@@ -1,4 +1,5 @@
 #!/bin/bash
+
 echo "Please input the cluster size:"
 #read size
 size=$(awk 'NR=='1' {print $1}' spot.txt)
