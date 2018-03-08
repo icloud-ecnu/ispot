@@ -11,6 +11,5 @@ ssh ubuntu@$newnode > /dev/null 2>&1 << eeooff
 cd /home/ubuntu/ispot
 ./spark.sh $i
 start-slave.sh $master
-
 eeooff
 
