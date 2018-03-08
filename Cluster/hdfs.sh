@@ -1,4 +1,5 @@
 #!/bin/bash
+
 echo "Input NameNode hostname:"
 #read nameip
 nameip=$(awk 'NR=='1' {print $1}' hdfs.txt)
