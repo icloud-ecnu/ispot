@@ -1,0 +1,46 @@
+Modify the following files of the open source version spark2.0.1 to implement simple checkpoint fault tolerance:
+spark-2.0.1/core/src/main/scala/org/apache/spark/SparkContext.scala
+
+spark-2.0.1/core/src/main/scala/org/apache/spark/MapOutputTracker.scala
+
+spark-2.0.1/core/src/main/scala/org/apache/spark/scheduler/DAGScheduler.scala
+
+spark-2.0.1/core/src/main/scala/org/apache/spark/executor/Executor.scala
+
+spark-2.0.1/core/src/main/scala/org/apache/spark/metrics/MetricsConfig.scala
+
+spark-2.0.1/core/src/main/scala/org/apache/spark/rdd/RDD.scala
+
+spark-2.0.1/core/src/main/scala/org/apache/spark/rdd/RDDCheckpointData.scala
+
+spark-2.0.1/core/src/main/scala/org/apache/spark/rdd/ReliableRDDCheckpointData.scala
+
+
+1.In spark-2.0.1/core/src/main/scala/org/apache/spark/metrics/MetricsConfig.scala, a function getmy () has been added to read the value of "my_config" in the configuration file, which specifies the ID of the critical RDD worth checkpointing:
+ def getmy(): Properties = {
+    setDefaultProperties(properties)
+
+    loadPropertiesFromFile(conf.getOption("spark.metrics.conf"))
+    // Also look for the properties in provided Spark configuration
+    val prefix = "spark.metrics.conf."
+    conf.getAll.foreach {
+      case (k, v) if k.startsWith(prefix) =>
+        properties.setProperty(k.substring(prefix.length()), v)
+      case _ =>
+    }
+    appproperties.setProperty("my_config", properties.getProperty("my_config"))
+    appproperties
+  }
+
+2.In spark-2.0.1/core/src/main/scala/org/apache/spark/scheduler/DAGScheduler.scala, when generating the DAG graph of the job, the function getmy() is called to obtain the ID of the RDD that needs the checkpoint, and then the fault tolerance of the two disk backups is performed on the critical RDD using the rdd cache method persist(DISK_ONLY_2):
+val sparkConf = new SparkConf(loadDefaults = false)
+    sparkConf.set("spark.metrics.conf", "conf/metrics.properties")
+    val conf = new MetricsConfig(sparkConf)
+    val para = conf.getmy().getProperty("my_config")
+    for(ss <- para.split(",")) {
+      if( rdd.id==ss.toInt ) {
+        rdd.persist(StorageLevel.DISK_ONLY_2)
+      }
+    }
+3.Print some log information in other source files to see if the persist method takes effect.
+4.Using maven to compile the modified version of the spark source code into a binary installation package file.
