@@ -1,4 +1,5 @@
 #!/bin/bash
+
 echo "Input Master hostname:"
 masterip=$(awk 'NR=='1' {print $1}' spark.txt)
 echo $masterip
