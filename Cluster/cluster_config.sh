@@ -10,7 +10,6 @@ check_rdd=0,1
 scp /home/ubuntu/ispot/ebs.sh ubuntu@$namenode:/home/ubuntu/ispot/
 scp /home/ubuntu/ispot/mountpoint ubuntu@$namenode:/home/ubuntu/ispot/
 
-
 scp -r /usr/local/hadoop/etc/hadoop ubuntu@$namenode:/usr/local/hadoop/etc
 scp -r /usr/local/zookeeper/conf ubuntu@$namenode:/usr/local/zookeeper
 scp -r /usr/local/zookeeper/tmp ubuntu@$namenode:/usr/local/zookeeper
