@@ -1,3 +1,5 @@
+#!/bin/bash
+
 echo "Mount the EBS......"
 sudo mkfs -t ext4 /dev/xvdf
 sudo mkdir /mnt/disk1
