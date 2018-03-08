@@ -2,3 +2,4 @@
 r3.large 1.5
 d d d d 
 ami-b2499dc8
+
