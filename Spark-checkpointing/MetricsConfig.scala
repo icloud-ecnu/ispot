@@ -127,5 +127,4 @@ private[spark] class MetricsConfig(conf: SparkConf) extends Logging {
       }
     }
   }
-
 }
