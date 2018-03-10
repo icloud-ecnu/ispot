@@ -5,6 +5,8 @@ iSpot is a lightweight and cost-effective instance provisioning framework for Di
 ## Architecture and Modules of iSpot
 iSpot leverage the LSTM-based price prediction and the performance model of Spark with the critical data checkpointing, iSpot is able to translate the big data analytics job and its performance goals (e.g., the expected completion time) from cloud customers into an appropriate number of transient servers with the cost-effective instance type.
 
+![](https://github.com/icloud-ecnu/ispot/blob/master/images/architecture.png) 
+
 ### LSTM-based Price Prediction
 
 
