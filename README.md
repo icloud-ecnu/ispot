@@ -7,22 +7,22 @@ iSpot leverage the LSTM-based price prediction and the performance model of Spar
 
 ![](https://github.com/icloud-ecnu/ispot/blob/master/images/architecture.png) 
 
-### LSTM-based Price Prediction
+## LSTM-based Price Prediction
 
 
-### Instance Checkpoint & Restore
+## Instance Checkpoint & Restore
 To mitigate the RDD recovery overhead caused by the instance revocations, we integrate
-our critical data checkpointing mechanism elaborated into Spark v2.0.1 by modifying the source codes of Spark. In more detail, we checkpoint the critical RDDs using rdd.persist() to remote disks in the cluster (modified in DAGScheduler.scala). The files which we have modified was list in the directory of Spark-checkpointing, you can download and replace in the source code, then building Spark using Maven.Example:
+our critical data checkpointing mechanism elaborated into Spark v2.0.1 by modifying the source codes of Spark. In more detail, we checkpoint the critical RDDs using rdd.persist() to remote disks in the cluster (modified in DAGScheduler.scala). The files which we have modified was list in the directory of Spark-checkpointing, you can download and replace in the source code, then building Spark using Maven. Example:
 
 ```
 # Apache Hadoop 2.7.X and later
 ./build/mvn -Pyarn -Phadoop-2.7 -Dhadoop.version=2.7.3 -DskipTests clean package
 ```
 
-### Spark Performance Model
+## Spark Performance Model
 
 
-### Performance Guarantee & Cost Minimization
+## Performance Guarantee & Cost Minimization
 After using provisioning algorithm get the number and type of instance, we using some automatic scripts to request new instance in the stable availability zones and deploy the Spark cluster. The shell scripts in directory Cluster help you to reduce many manual configuration steps.
 
 
