@@ -8,7 +8,7 @@ iSpot leverages the LSTM-based price prediction and the performance model of Spa
 ![](https://github.com/icloud-ecnu/ispot/blob/master/images/architecture.png) 
 
 ## LSTM-based Price Prediction
-
+We train the LSTM model with a subset of price data, which is divided into n<sup>steps</sup>.
 
 ## Spark Performance Model
 
