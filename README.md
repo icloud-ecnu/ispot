@@ -18,6 +18,7 @@ our critical data checkpointing mechanism elaborated into Spark v2.0.1 by modify
 # Apache Hadoop 2.7.X and later
 ./build/mvn -Pyarn -Phadoop-2.7 -Dhadoop.version=2.7.3 -DskipTests clean package
 ```
+If you think that downloading dependencies from the maven repository is too slow, you can use Alibaba Cloud's repository or build a nexus local private repository.
 
 ## Spark Performance Model
 
