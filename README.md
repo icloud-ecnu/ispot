@@ -12,8 +12,8 @@ We train the LSTM model with a subset of price data, which is divided into n<sub
 
 ## Spark Performance Model
 The model of a Spark job is built based on the lineage graph of RDDs, which is illustrated by the DAG information of stages in the following figure.
-
 ![](https://github.com/icloud-ecnu/ispot/blob/master/images/DAG.png) 
+Such DAG information illustrates the dependency of consecutive stages. Given the stage set of a job S = {S<sub>1</sub>,S<sub>2</sub>,...,S<sub>n</sub>}, the completion time of a Spark job T<sub>job</sub> can be considered as the completion time of the last stage block, which is given by <br> T<sub>job</sub> = T<sub>block</sub><sup>i</sup>, where i = S<sub>n</sub>. (1) </br>
 
 ## Instance Checkpoint & Restore
 To mitigate the RDD recovery overhead caused by the instance revocations, we integrate
