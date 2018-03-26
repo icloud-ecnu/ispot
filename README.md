@@ -18,7 +18,8 @@ As the stages are executed in parallel and blocked by the ancestor stages, the c
 <div align=center><img width="300" height=40" src="https://github.com/icloud-ecnu/ispot/blob/master/images/Boundary.png"/></div>
 We proceed to model the execution time of each stage i as below,
 <div align=center><img width="300" height=30" src="https://github.com/icloud-ecnu/ispot/blob/master/images/Tstage.png"/></div>
-where $T^i_{sh}$,$T^i_{pr}$, and $T^i_{gc}$
+where T^i_{sh},T^i_{pr}, and T^i_{gc}
+  
 ## Instance Checkpoint & Restore
 To mitigate the RDD recovery overhead caused by the instance revocations, we integrate
 our critical data checkpointing mechanism elaborated into Spark v2.0.1 by modifying the source codes of Spark. In more detail, we checkpoint the critical RDDs using rdd.persist() to remote disks in the cluster (modified in DAGScheduler.scala). The files which we have modified are listed in the directory of Spark-checkpointing. You can download and replace them in the source code and then build Spark using Maven. Example:
