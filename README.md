@@ -15,7 +15,7 @@ The model of a Spark job is built based on the lineage graph of RDDs, which is i
 <br>Such DAG information illustrates the dependency of consecutive stages. Given the stage set of a job S = {S<sub>1</sub>,S<sub>2</sub>,...,S<sub>n</sub>}, the completion time of a Spark job T<sub>job</sub> can be considered as the completion time of the last stage block, which is given by 
 <div align=center><img width="400" height=30" src="https://github.com/icloud-ecnu/ispot/blob/master/images/Tjob.png"/></div>
 As the stages are executed in parallel and blocked by the ancestor stages, the completion time of a stage block i is calculated by adding the stage execution time to the maximal block time of its ancestor stages. In particular, the upper bound and the lower bound of T<sub>job</sub> can be given by 
-<div align=center><img width="400" height=30" src="https://github.com/icloud-ecnu/ispot/blob/master/images/Boundary.png"/></div>
+<div align=center><img width="400" height=40" src="https://github.com/icloud-ecnu/ispot/blob/master/images/Boundary.png"/></div>
 We proceed to model the execution time of each stage i as below,
 <div align=center><img width="400" height=30" src="https://github.com/icloud-ecnu/ispot/blob/master/images/Tstage.png"/></div>
 where $T^i_ {sh}$,$T^i_ {pr}$, and $T^i_ {gc}$
