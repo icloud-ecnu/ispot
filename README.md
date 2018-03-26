@@ -19,7 +19,7 @@ As the stages are executed in parallel and blocked by the ancestor stages, the c
 We proceed to model the execution time of each stage i as below,
 <div align=center><img width="300" height=30" src="https://github.com/icloud-ecnu/ispot/blob/master/images/Tstage.png"/></div>
 where T<sup>i</sup><sub>sh</sub>,T<sup>i</sup><sub>pr</sub>,and T<sup>i</sup><sub>gc</sub> denote the data shuffling, data processing and data (de)serialization and garbage collectiontime of the stage i, respectively.
-<br>In particular, our analytical performance model for Spark can be extended to the other dataflow processing frameworks(e.g., Dryad, TensorFlow), which is left as our future work.
+<br>In particular, our analytical performance model for Spark can be extended to the other dataflow processing frameworks(e.g., Dryad, TensorFlow), which is left as our future work.</br>
   
 ## Instance Checkpoint & Restore
 To mitigate the RDD recovery overhead caused by the instance revocations, we integrate
