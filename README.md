@@ -33,4 +33,6 @@ If downloading dependencies from the maven repository is too slow, you can use A
 ## Performance Guarantee & Cost Minimization
 After using provisioning algorithm to get the number and type of instance, we leverage automatic scripts to request new instances in the stable availability zones and to deploy the Spark cluster. The shell scripts in directory Cluster help to reduce many manual configuration steps.
 
-
+# Publications
+[1] Fei Xu, Haoyue Zheng, Huan Jiang, Wujie Shao, Haikun Liu, Zhi Zhou, “Cost-Effective Cloud Server Provisioning for Predictable Performance of Big Data Analytics,”IEEE Transactions on Parallel and Distributed Systems, 2019, 30(5): 1036-1051.
+[2] Fei Xu, Huan Jiang, Haoyue Zheng, Wujie Shao, “iSpot: Achieving Predictable Performance for Big Data Analytics with Cloud Transient Servers,” in: Proc. of ISPA 2017, Guangzhou, China, December 12-15, 2017. 314-321.
