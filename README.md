@@ -34,6 +34,32 @@ If downloading dependencies from the maven repository is too slow, you can use A
 After using provisioning algorithm to get the number and type of instance, we leverage automatic scripts to request new instances in the stable availability zones and to deploy the Spark cluster. The shell scripts in directory Cluster help to reduce many manual configuration steps.
 
 # Publications
-[1] Fei Xu, Haoyue Zheng, Huan Jiang, Wujie Shao, Haikun Liu, Zhi Zhou, “Cost-Effective Cloud Server Provisioning for Predictable Performance of Big Data Analytics,”IEEE Transactions on Parallel and Distributed Systems, 2019, 30(5): 1036-1051.
+### iSpot Journal Extended Version:
+[1] Fei Xu, Haoyue Zheng, Huan Jiang, Wujie Shao, Haikun Liu, Zhi Zhou, “[Cost-Effective Cloud Server Provisioning for Predictable Performance of Big Data Analytics](https://ieeexplore.ieee.org/document/8478347),”IEEE Transactions on Parallel and Distributed Systems, 2019, 30(5): 1036-1051.
 
-[2] Fei Xu, Huan Jiang, Haoyue Zheng, Wujie Shao, “iSpot: Achieving Predictable Performance for Big Data Analytics with Cloud Transient Servers,” in: Proc. of ISPA 2017, Guangzhou, China, December 12-15, 2017. 314-321.
+```
+@article{xu2018cost,
+  title={Cost-effective cloud server provisioning for predictable performance of big data analytics},
+  author={Xu, Fei and Zheng, Haoyue and Jiang, Huan and Shao, Wujie and Liu, Haikun and Zhou, Zhi},
+  journal={IEEE Transactions on Parallel and Distributed Systems},
+  volume={30},
+  number={5},
+  pages={1036--1051},
+  year={2018},
+  publisher={IEEE}
+}
+```
+
+### iSpot Conference Version:
+[2] Fei Xu, Huan Jiang, Haoyue Zheng, Wujie Shao, “[iSpot: Achieving Predictable Performance for Big Data Analytics with Cloud Transient Servers](https://ieeexplore.ieee.org/document/8367282),” in: Proc. of ISPA 2017, Guangzhou, China, December 12-15, 2017. 314-321.
+
+```
+@inproceedings{xu2017ispot,
+  title={iSpot: Achieving predictable performance for big data analytics with cloud transient servers},
+  author={Xu, Fei and Jiang, Huan and Zheng, Haoyue and Shao, Wujie},
+  booktitle={2017 IEEE International Symposium on Parallel and Distributed Processing with Applications and 2017 IEEE International Conference on Ubiquitous Computing and Communications (ISPA/IUCC)},
+  pages={314--321},
+  year={2017},
+  organization={IEEE}
+}
+```
